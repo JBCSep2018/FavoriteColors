@@ -8,11 +8,14 @@ public class Main {
     // Get list of people from the list of people entered for a color specified
     People contactList = new People(getContactList(allPeople));
 
+    // Print list of all people, and a list of people with the search color
+    // entered
     printPeople(allPeople, "ALL PEOPLE");
     printPeople(contactList, "CONTACT LIST OF SEARCH COLOR");
   }
 
   private static ArrayList<Person> getListOfPeople(){
+    // Declare new array list to store people entered
     ArrayList<Person> people = new ArrayList<>();
     Color color = new Color();
 
@@ -20,7 +23,8 @@ public class Main {
     String name, email, favoriteColor, quit = "";
 
     do {
-      Person person = new Person();
+      // Declare new person object
+      Person person;
 
       System.out.print("Person's name: ");
       name = in.nextLine();
@@ -32,6 +36,7 @@ public class Main {
       favoriteColor = in.nextLine();
       System.out.println(color.getFeedback(favoriteColor));
 
+      // Set person's name, email, and favorite color
       person = new Person(name, email, favoriteColor);
       people.add(person);
 
@@ -49,6 +54,7 @@ public class Main {
     Scanner in = new Scanner(System.in);
     String color = "";
 
+    // Prompt user color to search for
     System.out.print("Enter color to search for: ");
     color = in.nextLine();
 
@@ -61,6 +67,7 @@ public class Main {
             "================================");
     System.out.println("Name\t\t\tEmail\t\tFavorite Color");
 
+    // Loops through list of people and print out their details
     for(Person person : people.getPeople()){
       System.out.println(person.getName() + "\t\t\t" + person.getEmail() +
               "\t\t\t" + person.getFavoriteColor());

@@ -18,6 +18,7 @@ public class People {
     this.people = people;
   }
 
+  // Returns a list of people with "color" passed in
   public ArrayList<Person> getContactList(String color) {
     ArrayList<Person> contactList = new ArrayList<>();
 
